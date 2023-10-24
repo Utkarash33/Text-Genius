@@ -55,7 +55,7 @@ public class Promp {
 					+ "Task:-\r\n"
 					
 					+ "Paragraph "+ prompt
-					+" Language "+ language;
+					+"Response Language "+ language;
 		}
 		else if(catagory.toLowerCase().equals("Summary"))
 		{
@@ -68,9 +68,11 @@ public class Promp {
 					+ "in the \"step format\" around with"
 					+ " one line in start about the paragraph "
 					+ " in the given language\r\n"
+				        +" first generate response in English and then convert that to the language "
+				        +"User want to see the response in"
 					+ "Task:-\r\n"
 					+ "Paragraph "+ prompt
-					+" Language "+ language;
+					+"Response Language "+ language;
 		}
 		else
 		{
@@ -117,7 +119,7 @@ public class Promp {
 				   +"Note-Words limit to follow 60-100 words"	
 				+ "Task:-\r\n"
 					+ "topic "+prompt+"\r\n"
-					+"language "+language;
+					+"Response language "+language;
 		}
 			
 			
