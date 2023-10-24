@@ -51,7 +51,7 @@ public class Promp {
 					+ "result: ਸਤ ਸ੍ਰੀ ਅਕਾਲ"
 					+ "you have to given the output as it is if the input is in a paragraph output must be in the paragraph"
 					+ "if it's a single words output will be a single line and if the input are steps the output must be as step "
-					+ "the input lanuguge can be any language but the output must be in the asked language by the user in the prompt"
+					+ "the input language can be any language but the output must be in the asked language by the user in the prompt"
 					+ "Task:-\r\n"
 					
 					+ "Paragraph "+ prompt
@@ -110,6 +110,10 @@ public class Promp {
 					+ "6. यह दुनियाभर में पॉप्युलर है।\r\n"
 					+ "7. customization की सुविधा है।\r\n"
 					+ "8. ऐप स्टोर: Google Play Store।"
+				        +"=Tpoic Hello"
+				        +"-Language Hindi"
+				        +"\r\n"
+				        +"हेलो एक अंग्रेजी शब्द है जिसका अर्थ होता है 'नमस्ते' या 'हाय'। यह एक सामान्य शब्द है जिसे लोग अपने परिचितों या अनजान लोगों के सामने उपयोग करते हैं। इसे बोलने के लिए आप आवाज को 'हेलो' या 'हाय' की अभिव्यक्ति के रूप में बोल सकते हैं। यह एक सरल और सभी के लिए सुलभ शब्द है जिसका उपयोग आप कई सारे संदर्भों में कर सकते हैं।"
 					+ "Task:-\r\n"
 					+ "topic "+prompt+"\r\n"
 					+"language "+language;
