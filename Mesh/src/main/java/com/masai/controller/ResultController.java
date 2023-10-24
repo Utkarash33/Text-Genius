@@ -38,23 +38,57 @@ public class ResultController {
 		System.out.println(pg.getPrompt()+" "+ pg.getLanguage());
 		
 		   String prompt = pg.getPromptValue("Summary");
-		   
+	
+		 String model;
+		      if (pg.getLanguage().equalsIgnoreCase("hindi")) {
+		         model = "text-hi-002";
+		      } else if (pg.getLanguage().equalsIgnoreCase("punjabi")) {
+		         model = "text-pa-002";
+		      } else if (pg.getLanguage().equalsIgnoreCase("french")) {
+		         model = "text-fr-002";
+		      } else if (pg.getLanguage().equalsIgnoreCase("spanish")) {
+		         model = "text-es-002";
+		      } else {
+		         // Default to English model
+		         model = "gpt-3.5-turbo-16k";
+		      }
+
+    
+			
 		  final OpenAiService service = userService.getOpenAiService();
 	      final ChatCompletionRequest chatRequest = userService.getChatCompletionRequest(List.of(new ChatMessage(defaultRole, prompt)));
 	     String s = service.createChatCompletion(chatRequest).getChoices().get(0).getMessage().getContent();
-	    
-		return new ResponseEntity<>(s,HttpStatus.OK);
-	}
+			  chatRequest.setModel(model); 
+		    
+			return new ResponseEntity<>(s,HttpStatus.OK);
+		}
 	
 	  @PostMapping("/generation")
 	  public ResponseEntity<String> generateText(@RequestBody Promp pg)
 		{
 			System.out.println(pg.getPrompt()+" "+ pg.getLanguage());
 			   String prompt = pg.getPromptValue("Generate");
-			   
-			  final OpenAiService service = userService.getOpenAiService();
-		      final ChatCompletionRequest chatRequest = userService.getChatCompletionRequest(List.of(new ChatMessage(defaultRole, prompt)));
-		     String s = service.createChatCompletion(chatRequest).getChoices().get(0).getMessage().getContent();
+
+		 String model;
+		      if (pg.getLanguage().equalsIgnoreCase("hindi")) {
+		         model = "text-hi-002";
+		      } else if (pg.getLanguage().equalsIgnoreCase("punjabi")) {
+		         model = "text-pa-002";
+		      } else if (pg.getLanguage().equalsIgnoreCase("french")) {
+		         model = "text-fr-002";
+		      } else if (pg.getLanguage().equalsIgnoreCase("spanish")) {
+		         model = "text-es-002";
+		      } else {
+		         // Default to English model
+		         model = "gpt-3.5-turbo-16k";
+		      }
+
+    
+			
+		  final OpenAiService service = userService.getOpenAiService();
+	      final ChatCompletionRequest chatRequest = userService.getChatCompletionRequest(List.of(new ChatMessage(defaultRole, prompt)));
+	     String s = service.createChatCompletion(chatRequest).getChoices().get(0).getMessage().getContent();
+			  chatRequest.setModel(model); 
 		    
 			return new ResponseEntity<>(s,HttpStatus.OK);
 		}
@@ -65,9 +99,27 @@ public class ResultController {
 			System.out.println(pg.getPrompt()+" "+ pg.getLanguage());
 			   String prompt = pg.getPromptValue("Translator");
 			   
-			  final OpenAiService service = userService.getOpenAiService();
-		      final ChatCompletionRequest chatRequest = userService.getChatCompletionRequest(List.of(new ChatMessage(defaultRole, prompt)));
-		     String s = service.createChatCompletion(chatRequest).getChoices().get(0).getMessage().getContent();
+			
+		 String model;
+		      if (pg.getLanguage().equalsIgnoreCase("hindi")) {
+		         model = "text-hi-002";
+		      } else if (pg.getLanguage().equalsIgnoreCase("punjabi")) {
+		         model = "text-pa-002";
+		      } else if (pg.getLanguage().equalsIgnoreCase("french")) {
+		         model = "text-fr-002";
+		      } else if (pg.getLanguage().equalsIgnoreCase("spanish")) {
+		         model = "text-es-002";
+		      } else {
+		         // Default to English model
+		         model = "gpt-3.5-turbo-16k";
+		      }
+
+    
+			
+		  final OpenAiService service = userService.getOpenAiService();
+	      final ChatCompletionRequest chatRequest = userService.getChatCompletionRequest(List.of(new ChatMessage(defaultRole, prompt)));
+	     String s = service.createChatCompletion(chatRequest).getChoices().get(0).getMessage().getContent();
+			  chatRequest.setModel(model); 
 		    
 			return new ResponseEntity<>(s,HttpStatus.OK);
 		}
