@@ -35,7 +35,7 @@ public class ResultController {
 	{
 
 
-		System.out.println(pg.getPrompt()+" "+ pg.getLanguage());
+		
 		
 		   String prompt = pg.getPromptValue("Summary");
 	
@@ -53,7 +53,7 @@ public class ResultController {
 		         model = "gpt-3.5-turbo-16k";
 		      }
 
-    
+       System.out.println(pg.getPrompt()+" "+ pg.getLanguage()+" "+model);
 			
 		  final OpenAiService service = userService.getOpenAiService();
 	      final ChatCompletionRequest chatRequest = userService.getChatCompletionRequest(List.of(new ChatMessage(defaultRole, prompt)));
@@ -66,7 +66,7 @@ public class ResultController {
 	  @PostMapping("/generation")
 	  public ResponseEntity<String> generateText(@RequestBody Promp pg)
 		{
-			System.out.println(pg.getPrompt()+" "+ pg.getLanguage());
+			
 			   String prompt = pg.getPromptValue("Generate");
 
 		 String model;
@@ -83,7 +83,7 @@ public class ResultController {
 		         model = "gpt-3.5-turbo-16k";
 		      }
 
-    
+    System.out.println(pg.getPrompt()+" "+ pg.getLanguage()+" "+model);
 			
 		  final OpenAiService service = userService.getOpenAiService();
 	      final ChatCompletionRequest chatRequest = userService.getChatCompletionRequest(List.of(new ChatMessage(defaultRole, prompt)));
@@ -96,7 +96,7 @@ public class ResultController {
 	  @PostMapping("/translation")
 	  public ResponseEntity<String> languageTranslation(@RequestBody Promp pg)
 		{
-			System.out.println(pg.getPrompt()+" "+ pg.getLanguage());
+			
 			   String prompt = pg.getPromptValue("Translator");
 			   
 			
@@ -114,7 +114,7 @@ public class ResultController {
 		         model = "gpt-3.5-turbo-16k";
 		      }
 
-    
+    System.out.println(pg.getPrompt()+" "+ pg.getLanguage()+" "+model);
 			
 		  final OpenAiService service = userService.getOpenAiService();
 	      final ChatCompletionRequest chatRequest = userService.getChatCompletionRequest(List.of(new ChatMessage(defaultRole, prompt)));
