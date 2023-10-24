@@ -33,6 +33,9 @@ public class ResultController {
 	@PostMapping("/summary")
 	public ResponseEntity<String> summaryGeneration(@RequestBody Promp pg)
 	{
+
+
+		System.out.println(pg.getPrompt()+" "+ pg.getLanguage());
 		
 		   String prompt = pg.getPromptValue("Summary");
 		   
@@ -46,7 +49,7 @@ public class ResultController {
 	  @PostMapping("/generation")
 	  public ResponseEntity<String> generateText(@RequestBody Promp pg)
 		{
-			
+			System.out.println(pg.getPrompt()+" "+ pg.getLanguage());
 			   String prompt = pg.getPromptValue("Generate");
 			   
 			  final OpenAiService service = userService.getOpenAiService();
@@ -59,7 +62,7 @@ public class ResultController {
 	  @PostMapping("/translation")
 	  public ResponseEntity<String> languageTranslation(@RequestBody Promp pg)
 		{
-			
+			System.out.println(pg.getPrompt()+" "+ pg.getLanguage());
 			   String prompt = pg.getPromptValue("Translator");
 			   
 			  final OpenAiService service = userService.getOpenAiService();
