@@ -42,7 +42,18 @@ public class Promp {
 					+ " from one language to another language easily.\r\n"
 					+ "\"\"Task\"\"\r\n"
 					+ "know you have to convert the paragraph into"
-					+ " the other language that is provided in the same formate\r\n"
+					+ " the other language that is asked by the user\r\n"
+					+ "Example Paragraph : Hello \r\n"
+					+ "Language : Hindi\r\n"
+					+ "result: नमस्ते"
+					+ "Paragraph : Hello \r\n"
+					+ "Language : punjabi\r\n"
+					+ "result: ਸਤ ਸ੍ਰੀ ਅਕਾਲ"
+					+ "you have to given the output as it is if the input is in a paragraph output must be in the paragraph"
+					+ "if it's a single words output will be a single line and if the input are steps the output must be as step "
+					+ "the input lanuguge can be any language but the output must be in the asked language by the user in the prompt"
+					+ "Task:-\r\n"
+					
 					+ "Paragraph "+ prompt
 					+" Language "+ language;
 		}
@@ -57,6 +68,7 @@ public class Promp {
 					+ "in the \"step format\" around with"
 					+ " one line in start about the paragraph "
 					+ " in the given language\r\n"
+					+ "Task:-\r\n"
 					+ "Paragraph "+ prompt
 					+" Language "+ language;
 		}
@@ -98,6 +110,7 @@ public class Promp {
 					+ "6. यह दुनियाभर में पॉप्युलर है।\r\n"
 					+ "7. customization की सुविधा है।\r\n"
 					+ "8. ऐप स्टोर: Google Play Store।"
+					+ "Task:-\r\n"
 					+ "topic "+prompt+"\r\n"
 					+"language "+language;
 		}
